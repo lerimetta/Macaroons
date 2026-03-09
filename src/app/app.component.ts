@@ -1,13 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductType } from './types/product.type';
+import { AdvantageType } from './types/advantage.type';
+import { ProductService } from './services/product.service';
+import { CartService } from './services/cart.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  public advantages = [
+
+export class AppComponent implements OnInit {
+  advantages: AdvantageType[] = [
     {
       title: 'Лучшие продукты',
       description: 'Мы честно готовим макаруны только из натуральных и качественных продуктов. Мы не используем консерванты, ароматизаторы и красители.'
@@ -26,44 +30,34 @@ export class AppComponent {
     }
   ]
 
-  public goods: ProductType[] = [
-    {
-      image: '1.png',
-      title: 'Макарун с малиной',
-      price: '1,70'
-    },
-    {
-      image: '2.png',
-      title: 'Макарун с манго',
-      price: '1,70'
-    },
-    {
-      image: '3.png',
-      title: 'Пирог с ванилью',
-      price: '1,70'
-    },
-    {
-      image: '4.png',
-      title: 'Пирог с фисташками',
-      price: '1,70'
-    },
-  ]
+  goods: ProductType[] = [];
 
-  public formValues = {
+  formValues = {
     productTitle: '',
     name: '',
     phone: ''
   }
+  constructor(private productService: ProductService, public cartService: CartService) {
 
-  public scrollTo(target: HTMLElement): void {
+  }
+
+  ngOnInit(): void {
+    this.goods = this.productService.getProducts();
+  }
+
+
+  scrollTo(target: HTMLElement): void {
     target.scrollIntoView({ behavior: 'smooth' });
   }
 
-  public addToCart(product: ProductType, target: HTMLElement): void {
-    this.scrollTo(target);
-    this.formValues.productTitle = product.title.toUpperCase();
+  addToCart(product: ProductType, target: HTMLElement): void {
+    // this.scrollTo(target);
+    // this.formValues.productTitle = product.title.toUpperCase();
+    alert(product.title + ' добавлен в корзину!');
+    this.cartService.count++;
+    this.cartService.total += product.price;
   }
-  public showPresent: boolean = true;
-  public phoneNumber = '+375 (29) 368-98-68';
-  public instagram = 'https://www.instagram.com';
+  showPresent: boolean = true;
+  phoneNumber = '375293689868';
+  instagram = 'https://www.instagram.com';
 }

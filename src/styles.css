@@ -8,3 +8,82 @@ html {
   scroll-behavior: smooth;
 
 }
+@font-face {
+  font-family: "Tavolga";
+  src: url("./assets/fonts/tavolga.woff");
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("./assets/fonts/gilroy-regular.woff");
+}
+
+@font-face {
+  font-family: "GilroyMedium";
+  src: url("./assets/fonts/gilroy-medium.woff");
+}
+
+@font-face {
+  font-family: "Gilroy";
+  font-weight: bold;
+  src: url("./assets/fonts/gilroy-bold.woff");
+}
+
+@font-face {
+  font-family: "GilroyExtraBold";
+  font-weight: bold;
+  src: url("./assets/fonts/gilroy-extrabold.woff");
+}
+
+body {
+  background-color: white;
+}
+
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.icon {
+  display: none;
+}
+
+.burger {
+  background-color: rgb(130, 19, 40);
+  width: 40px;
+  height: 2px;
+  margin-bottom: 8px;
+}
+
+.burger:last-child {
+  margin-bottom: 0;
+}
+.button {
+  font-size: 18px;
+  font-family: "Gilroy", sans-serif;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 30px;
+  border: 0;
+  background-image: linear-gradient(90deg, rgb(113, 8, 30) 0%, rgb(215, 72, 92) 100%);
+  width: 100%;
+  z-index: 1;
+  position: relative;
+
+}
+
+.button:hover {
+  box-shadow: 0 5px 9px 1px rgba(130, 19, 40, 0.5);
+
+}

@@ -30,7 +30,7 @@ c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,2
         </li>
       </ul>
     </nav>
-    <a class="phone" href="tel:+375293689868">{{phoneNumber}}</a>
+    <a class="phone" href="tel:+375293689868">{{phoneNumber|phone}}</a>
     <div class="icon" id="burger">
       <div class="burger"></div>
       <div class="burger"></div>
@@ -44,7 +44,7 @@ c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,2
       <h1 class="intro-title">Мягкие французские пироженки Macaroons</h1>
       <p class="intro-text">Побалуйте себя и своих близких самыми вкусными и ароматными домашними пироженками
         Macaroon!</p>
-      <button class="button btn-intro" (click)="scrollTo(chooseMacaroon)">Выбрать макарун</button>
+      <button background class="button btn-intro" (click)="scrollTo(chooseMacaroon)">Выбрать макарун</button>
     </div>
     <div class="intro-image-wrap">
       <img class="intro-image" src="assets/images/macaroons.png" alt="macaroons">
@@ -70,11 +70,7 @@ c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,2
 <section class="advantages">
   <div class="container">
     <ol class="advantages-list">
-      <li class="advantages-item" *ngFor="let advantage of advantages; let i = index">
-        <div class="element"><span>{{i+1}}</span></div>
-        <h3 class="advantages-title">{{advantage.title}}</h3>
-        <p class="advantages-text">{{advantage.description}} </p>
-      </li>
+      <advantages *ngFor="let advantage of advantages; let i = index" [advantage]="advantage" [i]="i"></advantages>
     </ol>
   </div>
 </section>
@@ -82,15 +78,7 @@ c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,2
   <div class="container">
     <h2 class="goods-title">Выберите свой макарун</h2>
     <ol class="goods-list">
-      <li class="goods-list-item" *ngFor="let good of goods">
-        <img class="goods-image" src="assets/images/{{good.image}}" alt="макарун">
-        <h3 class="goods-list-item-title">{{good.title}}</h3>
-        <div class="wrap">
-          <p class="wrap-text">1 шт.</p>
-          <p class="wrap-text">{{good.price}} руб.</p>
-        </div>
-        <button class="button btn-goods" (click)="addToCart(good,orderElement)">Заказать</button>
-      </li>
+      <goods *ngFor="let good of goods" [good]="good" (addToCartEvent)="addToCart($event,orderElement)"></goods>
     </ol>
   </div>
 </section>
@@ -113,7 +101,7 @@ c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,2
         <label></label>
         <input name="phone" type="text" placeholder="+375 (__) ___ - __ - __" [(ngModel)]="formValues.phone">
 
-        <button class="button order-btn">Оформить заказ</button>
+        <button class="button order-btn" background>Оформить заказ</button>
       </form>
       <img class="strawberry2" src="assets/images/клубника2.png" alt="клубника">
     </div>
@@ -133,8 +121,10 @@ c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,2
   </div>
 </footer>
 <div class="present" *ngIf="showPresent">
-  <img src="assets/images/present.png" alt="подарок">
+  <span class="counter">{{cartService.count}}</span>
+  <img src="assets/images/cart.png" width="55" height="52" alt="подарок">
   <div class="table">
-    Оформите заказ и&nbsp;получите подарок!
+    <!-- Оформите заказ и&nbsp;получите подарок! -->
+    {{(cartService.total>0)?(cartService.total|currency:' '):cartService.total}} руб.
   </div>
 </div>

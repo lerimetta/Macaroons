@@ -1,0 +1,44 @@
+.goods-list-item {
+  border: 2px solid white;
+  border-radius: 20px;
+  width: 262px;
+  box-sizing: border-box;
+  padding: 0 20px 20px;
+  text-align: center;
+}
+.goods-image {
+  margin-bottom: -16px;
+  position: relative;
+  bottom: 60px;
+  transition: transform 0.5s;
+}
+.goods-list-item:hover .goods-image {
+  transform: scale(1.1);
+}
+
+.goods-list-item-title {
+  font-size: 18px;
+  font-family: "Tavolga", sans-serif;
+  color: rgb(255, 255, 255);
+  margin-bottom: 24px;
+}
+.wrap {
+  float: left;
+  margin-top: 5px;
+  margin-right: 28px;
+  text-align: left;
+}
+
+.wrap-text {
+  font-size: 15px;
+  font-family: "Gilroy", sans-serif;
+  color: rgb(255, 255, 255);
+}
+
+.wrap-text:first-child {
+  margin-bottom: 10px;
+}
+.button.btn-goods {
+  width: 130px;
+  height: 50px;
+}

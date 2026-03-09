@@ -1,64 +1,3 @@
-@font-face {
-  font-family: "Tavolga";
-  src: url("../assets/fonts/tavolga.woff");
-}
-
-@font-face {
-  font-family: "Gilroy";
-  src: url("../assets/fonts/gilroy-regular.woff");
-}
-
-@font-face {
-  font-family: "GilroyMedium";
-  src: url("../assets/fonts/gilroy-medium.woff");
-}
-
-@font-face {
-  font-family: "Gilroy";
-  font-weight: bold;
-  src: url("../assets/fonts/gilroy-bold.woff");
-}
-
-@font-face {
-  font-family: "GilroyExtraBold";
-  font-weight: bold;
-  src: url("../assets/fonts/gilroy-extrabold.woff");
-}
-
-body {
-  background-color: white;
-}
-
-
-ul,
-ol {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-.container {
-  max-width: 1140px;
-  margin: 0 auto;
-}
-
-.icon {
-  display: none;
-}
-
-.burger {
-  background-color: rgb(130, 19, 40);
-  width: 40px;
-  height: 2px;
-  margin-bottom: 8px;
-}
-
-.burger:last-child {
-  margin-bottom: 0;
-}
-
 /* HEADER */
 .header {
   padding: 33px 0 27px;
@@ -164,25 +103,6 @@ a {
   z-index: 2;
 }
 
-.button {
-  font-size: 18px;
-  font-family: "Gilroy", sans-serif;
-  color: rgb(255, 255, 255);
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 30px;
-  border: 0;
-  background-image: linear-gradient(90deg, rgb(113, 8, 30) 0%, rgb(215, 72, 92) 100%);
-  width: 100%;
-  z-index: 1;
-  position: relative;
-
-}
-
-.button:hover {
-  box-shadow: 0 5px 9px 1px rgba(130, 19, 40, 0.5);
-
-}
 
 .button.btn-intro {
   max-width: 240px;
@@ -239,49 +159,6 @@ a {
   grid-column-gap: 80px;
 }
 
-.element {
-  width: 70px;
-  height: 70px;
-  background-color: #821328;
-  position: relative;
-  display: flex;
-  align-items: end;
-  justify-content: center;
-  border-radius: 50%;
-  margin-bottom: 10px;
-  transition: background-color .5s;
-}
-
-.element span {
-  font-size: 60px;
-  font-family: "GilroyExtraBold", sans-serif;
-  color: white;
-  line-height: 0.75;
-  transition: color .5s;
-}
-
-.advantages-item:hover span {
-  color: rgb(130, 19, 40);
-}
-
-.advantages-item:hover .element {
-  background-color: #eba8b1;
-}
-
-.advantages-title {
-  font-size: 20px;
-  font-family: "GilroyExtraBold", sans-serif;
-  color: rgb(51, 25, 7);
-  margin-bottom: 10px;
-}
-
-.advantages-text {
-  font-size: 15px;
-  font-family: "GilroyMedium", sans-serif;
-  color: rgb(51, 25, 7);
-  line-height: 1.333;
-}
-
 /* GOODS */
 .goods {
   padding: 120px 0 120px;
@@ -302,54 +179,14 @@ a {
   grid-column-gap: 30px;
 }
 
-.goods-list-item {
-  border: 2px solid white;
-  border-radius: 20px;
-  width: 262px;
-  box-sizing: border-box;
-  padding: 0 20px 20px;
-  text-align: center;
-}
 
-.goods-image {
-  margin-bottom: -16px;
-  position: relative;
-  bottom: 60px;
-  transition: transform 0.5s;
-}
 
-.goods-list-item:hover .goods-image {
-  transform: scale(1.1);
-}
 
-.goods-list-item-title {
-  font-size: 18px;
-  font-family: "Tavolga", sans-serif;
-  color: rgb(255, 255, 255);
-  margin-bottom: 24px;
-}
 
-.wrap {
-  float: left;
-  margin-top: 5px;
-  margin-right: 28px;
-  text-align: left;
-}
 
-.wrap-text {
-  font-size: 15px;
-  font-family: "Gilroy", sans-serif;
-  color: rgb(255, 255, 255);
-}
 
-.wrap-text:first-child {
-  margin-bottom: 10px;
-}
 
-.button.btn-goods {
-  width: 130px;
-  height: 50px;
-}
+
 
 /* ORDER */
 .order {
@@ -527,8 +364,8 @@ input::placeholder {
   0% {}
 
   100% {
-      transform: scale(3);
-      opacity: 0;
+    transform: scale(3);
+    opacity: 0;
   }
 }
 
@@ -536,7 +373,7 @@ input::placeholder {
   0% {}
 
   50% {
-      transform: translateY(20px);
+    transform: translateY(20px);
   }
 
   100% {}
@@ -562,6 +399,22 @@ input::placeholder {
   box-shadow: 0 0 12px 2px rgba(130, 19, 40, 0.5);
 }
 
+.counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: -9px;
+  top:-9px;
+  border: 2px solid rgb(119, 10, 29);
+  color:rgb(119, 10, 29);
+  background-color: rgb(254, 239, 238);
+  border-radius: 50%;
+  text-align: center;
+  width:30px;
+  height: 30px;
+}
+
 .table {
   border-width: 2px;
   border-color: rgb(119, 10, 29);
@@ -581,6 +434,7 @@ input::placeholder {
   opacity: 0;
   bottom: -85px;
   transition: all 1s;
+  text-align: center;
 }
 
 .table::after {
@@ -602,120 +456,121 @@ input::placeholder {
   bottom: 35px;
   opacity: 1;
 }
+
 /* 768-1170 */
 @media screen and (max-width: 1170px) {
 
   .header .phone {
-      display: none;
+    display: none;
   }
 
   .container {
-      padding: 0 20px;
-      position: relative;
+    padding: 0 20px;
+    position: relative;
   }
 
   .menu {
-      margin-left: 103px;
-      margin-right: 0;
+    margin-left: 103px;
+    margin-right: 0;
   }
 
   .intro-image-wrap {
-      position: absolute;
-      top: 295px;
-      left: 184px;
+    position: absolute;
+    top: 295px;
+    left: 184px;
   }
 
   .intro {
-      padding-bottom: 420px;
-      padding-top: 50px;
+    padding-bottom: 420px;
+    padding-top: 50px;
   }
 
   .intro-title {
-      margin-bottom: 71px;
+    margin-bottom: 71px;
   }
 
   .intro-text {
-      margin-bottom: 43px;
+    margin-bottom: 43px;
   }
 
   .cook-info-text,
   .cook-info {
-      max-width: 675px;
+    max-width: 675px;
   }
 
   .cook-info-title {
-      max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .cook-image {
-      max-width: 300px;
-      max-height: 187px;
+    max-width: 300px;
+    max-height: 187px;
   }
 
   .cook .container {
-      display: block;
-      text-align: center;
+    display: block;
+    text-align: center;
   }
 
   .cook-info,
   .cook-info-text {
-      margin: 0 auto;
+    margin: 0 auto;
   }
 
   .cook-info-text {
-      margin-bottom: 40px;
+    margin-bottom: 40px;
   }
 
   .advantages {
-      padding-bottom: 138px;
+    padding-bottom: 138px;
   }
 
   .advantages-list {
-      grid-template-columns: 216px 216px;
-      grid-column-gap: 80px;
-      grid-row-gap: 90px;
-      justify-content: center;
-      text-align: center;
+    grid-template-columns: 216px 216px;
+    grid-column-gap: 80px;
+    grid-row-gap: 90px;
+    justify-content: center;
+    text-align: center;
   }
 
   .element {
-      margin: 0 auto 10px;
+    margin: 0 auto 10px;
   }
 
   .goods-list {
-      grid-template-columns: 263px 263px;
-      grid-row-gap: 130px;
-      justify-content: center;
+    grid-template-columns: 263px 263px;
+    grid-row-gap: 130px;
+    justify-content: center;
   }
 
   .order-image {
-      max-width: 352px;
-      max-height: 499px;
-      order: 2;
-      position: relative;
-      left: -50px;
-      bottom: -150px;
+    max-width: 352px;
+    max-height: 499px;
+    order: 2;
+    position: relative;
+    left: -50px;
+    bottom: -150px;
   }
 
   .order-wrap {
-      margin-left: 0;
-      flex-shrink: 0;
+    margin-left: 0;
+    flex-shrink: 0;
   }
 
   .strawberry {
-      top: 200px;
-      left: 370px;
+    top: 200px;
+    left: 370px;
   }
 
   .strawberry2 {
-      top: 80px;
-      left: 600px;
+    top: 80px;
+    left: 600px;
   }
 
   .present {
-      display: none;
+    display: none;
   }
 
 }
@@ -724,264 +579,262 @@ input::placeholder {
 /* 401-767 */
 @media screen and (max-width: 767px) {
   .icon {
-      display: block;
-      margin-left: auto;
+    display: block;
+    margin-left: auto;
   }
 
   .container {
-      padding: 0 15px;
+    padding: 0 15px;
   }
 
   .menu {
-      display: none;
+    display: none;
   }
 
   .menu.open {
-      display: flex;
-      align-items: center;
+    display: flex;
+    align-items: center;
   }
 
   .menu {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      top: 0;
-      left: 0;
-      background-color: #000000c9;
-      z-index: 30;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    top: 0;
+    left: 0;
+    background-color: #000000c9;
+    z-index: 30;
   }
 
   .menu ul {
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      margin: 0 auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 auto;
   }
 
   .menu-item {
-      margin: 10px 0;
+    margin: 10px 0;
   }
 
   .menu-item a {
-      color: white;
+    color: white;
   }
 
   .menu .close {
-      display: block;
-      width: 24px;
-      height: 24px;
-      fill: white;
-      position: absolute;
-      top: 30px;
-      left: 30px;
+    display: block;
+    width: 24px;
+    height: 24px;
+    fill: white;
+    position: absolute;
+    top: 30px;
+    left: 30px;
   }
 
   .intro {
-      padding-bottom: 55px;
+    padding-bottom: 55px;
   }
 
   .intro .container {
-      justify-content: center;
+    justify-content: center;
   }
 
   .intro {
-      text-align: center;
-      padding-bottom: 38px;
-      padding-top: 42px;
+    text-align: center;
+    padding-bottom: 38px;
+    padding-top: 42px;
   }
 
   .intro-title {
-      font-size: 32px;
-      line-height: 1.25;
-      margin-bottom: 32px;
+    font-size: 32px;
+    line-height: 1.25;
+    margin-bottom: 32px;
   }
 
   .intro-text {
-      font-size: 16px;
-      margin-left: auto;
-      margin-right: auto;
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .intro-image-wrap {
-      position: relative;
-      top: 0;
-      left: 0;
+    position: relative;
+    top: 0;
+    left: 0;
   }
 
   .intro-image {
-      max-width: 250px;
-      max-height: 207px;
+    max-width: 250px;
+    max-height: 207px;
   }
 
   .btn-intro {
-      margin-bottom: 32px;
+    margin-bottom: 32px;
   }
 
   .cook {
-      padding-top: 97px;
+    padding-top: 97px;
   }
 
   .cook-info-title {
-      font-size: 30px;
-      line-height: 35px;
-      margin-bottom: 31px;
+    font-size: 30px;
+    line-height: 35px;
+    margin-bottom: 31px;
   }
 
   .cook-info-text {
-      font-size: 16px;
-      line-height: 23px;
+    font-size: 16px;
+    line-height: 23px;
   }
 
   .advantages-list {
-      grid-template-columns: 157px 161px;
-      grid-column-gap: 45px;
-      grid-row-gap: 40px;
-      justify-content: center;
-      text-align: center;
+    grid-template-columns: 157px 161px;
+    grid-column-gap: 45px;
+    grid-row-gap: 40px;
+    justify-content: center;
+    text-align: center;
   }
 
   .advantages-title {
-      font-size: 18px;
+    font-size: 18px;
   }
 
   .advantages-text {
-      font-size: 13px;
-      line-height: 1.385;
+    font-size: 13px;
+    line-height: 1.385;
   }
 
   .goods {
-      padding-top: 74px;
-      padding-bottom: 103px;
+    padding-top: 74px;
+    padding-bottom: 103px;
   }
 
   .goods-list {
-      grid-template-columns: 263px;
-      grid-row-gap: 145px;
+    grid-template-columns: 263px;
+    grid-row-gap: 145px;
   }
 
   .goods-title {
-      font-size: 30px;
-      margin-bottom: 123px;
+    font-size: 30px;
+    margin-bottom: 123px;
   }
 
   .order {
-      padding-bottom: 91px;
+    padding-bottom: 91px;
   }
 
   .order .container {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   .order-title {
-      font-size: 30px;
+    font-size: 30px;
   }
 
   .order-text {
-      font-size: 16px;
+    font-size: 16px;
   }
 
   .order-image {
-      display: none;
+    display: none;
   }
 
   .order input {
-      max-width: 344px;
+    max-width: 344px;
   }
 
   .strawberry {
-      top: 100px;
-      left: 280px;
+    top: 100px;
+    left: 280px;
 
   }
 
   .strawberry2 {
-      display: none;
+    display: none;
   }
 
   .button.order-btn {
-      max-width: 344px;
+    max-width: 344px;
   }
 
   .footer {
-      padding: 41px;
+    padding: 41px;
   }
 
   .footer .container {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 35px 30px 35px 30px;
-      grid-row-gap: 30px;
-      text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 35px 30px 35px 30px;
+    grid-row-gap: 30px;
+    text-align: center;
   }
 
   .footer .logo {
-      order: 1;
+    order: 1;
   }
 
   .instagram {
-      order: 3;
+    order: 3;
   }
 
   .footer .phone {
-      justify-self: center;
-      align-self: flex-start;
-      order: 2;
+    justify-self: center;
+    align-self: flex-start;
+    order: 2;
   }
 
   .rights {
-      order: 4;
-      align-self: flex-end;
+    order: 4;
+    align-self: flex-end;
   }
 
   .circle,
   .circle2 {
-      width: 150px;
-      height: 150px;
-      top: 20px;
-      left: 55px;
+    width: 150px;
+    height: 150px;
+    top: 20px;
+    left: 55px;
   }
 
   @keyframes pulse {
-      0% {
-      }
+    0% {}
 
-      100% {
-          transform: scale(2);
-          opacity: 0;
+    100% {
+      transform: scale(2);
+      opacity: 0;
 
-      }
+    }
   }
 
   @keyframes pulse2 {
-      0% {
-      }
+    0% {}
 
-      100% {
-          transform: scale(2);
-          opacity: 0;
+    100% {
+      transform: scale(2);
+      opacity: 0;
 
-      }
+    }
   }
 }
 
 @media screen and (max-width: 400px) {
   .advantages-list {
-      grid-column-gap: 5px;
-      justify-content: space-between;
+    grid-column-gap: 5px;
+    justify-content: space-between;
   }
 }
 
 @media screen and (max-width: 360px) {
   .advantages-list {
-      grid-template-columns: 1fr;
-      grid-column-gap: 45px;
-      grid-row-gap: 40px;
-      justify-content: center;
-      text-align: center;
+    grid-template-columns: 1fr;
+    grid-column-gap: 45px;
+    grid-row-gap: 40px;
+    justify-content: center;
+    text-align: center;
   }
 
   .strawberry {
-      display: none;
+    display: none;
   }
 }

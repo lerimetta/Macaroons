@@ -1,0 +1,10 @@
+<li class="goods-list-item">
+  <img class="goods-image" src="assets/images/{{good.image}}" alt="макарун">
+  <h3 class="goods-list-item-title">{{good.title}}</h3>
+  <div class="wrap">
+    <p class="wrap-text">1 шт.</p>
+    <p class="wrap-text">{{good.price|currency:" "}} руб.</p>
+  </div>
+  <button class="button btn-goods" (click)="addProductToCart()" background>Заказать</button>
+</li>
+<!-- (click)="addToCart(good,orderElement) -->
